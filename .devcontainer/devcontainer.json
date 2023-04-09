@@ -104,14 +104,8 @@
 				"debug.console.wordWrap": false,
 				"editor.wordWrap": "off",
 				"editor.mouseWheelZoom": true,
-				"python.linting.enabled": true,
-				"python.linting.pylintEnabled": false,
-				"python.linting.flake8Enabled": true,
 				"editor.formatOnPaste": true,
 				"editor.bracketPairColorization.independentColorPoolPerBracketType": true,
-				"[dockerfile]": {
-					"editor.defaultFormatter": "ms-azuretools.vscode-docker"
-				},
 				"terminal.integrated.fontFamily": "consolas",
 				"terminal.integrated.fontSize": 16,
 				"editor.formatOnSave": true,
@@ -126,18 +120,15 @@
 				"workbench.colorTheme": "One Dark Pro Darker",
 				"workbench.iconTheme": "vscode-icons",
 				"files.autoSave": "afterDelay",
-				"editor.fontSize": 16
+				"editor.fontSize": 18
 			},
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
-				"ms-python.python",
 				"oderwat.indent-rainbow",
-				"njpwerner.autodocs",
-				"ms-toolsai.jupyter",
-				"ms-azuretools.vscode-docker",
 				"gruntfuggly.todo-tree",
+				"usernamehw.errorlens",
 				"streetsidesoftware.code-spell-checker",
-				"c0der-himel.vscode-wev-dev-extension-pack",
+				"ritwickdey.liveserver",
 				"zhuangtongfa.material-theme",
 				"vscode-icons-team.vscode-icons"
 			]

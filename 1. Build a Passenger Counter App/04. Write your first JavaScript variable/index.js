@@ -6,5 +6,6 @@ console.log(count)
 
 
 // 1. Create a variable, myAge, and set its value to your age
-
+let age = 26;
 // 2. Log the myAge variable to the console
+console.log("my age is: " + age);
