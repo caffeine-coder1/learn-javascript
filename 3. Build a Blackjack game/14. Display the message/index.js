@@ -6,7 +6,8 @@ let isAlive = true
 let message = ""
 
 // 1. Store the message-el paragraph in a variable called messageEl
-
+msgElement = document.getElementById("message-el")
+sumElement = document.getElementById("sum-el")
 function startGame() {
     if (sum <= 20) {
         message = "Do you want to draw a new card? 🙂"
@@ -18,5 +19,6 @@ function startGame() {
         isAlive = false
     }
     // 2. Display the message in the messageEl using messageEl.textContent
-    console.log(message)    
+    msgElement.textContent = message
+    sumElement.textContent = "Sum: " + sum
 }
