@@ -1,21 +1,36 @@
-let firstCard = 10
-let secondCard = 4
-let cards = [firstCard, secondCard]
-let sum = firstCard + secondCard
+let firstCard = 0
+let secondCard = 0
+let cards = []
+let sum = 0
 let hasBlackJack = false
-let isAlive = true
+let isAlive = false
 let message = ""
 let messageEl = document.getElementById("message-el")
 let sumEl = document.getElementById("sum-el")
 let cardsEl = document.getElementById("cards-el")
 
 function startGame() {
-    renderGame()
+    if (!isAlive){
+        isAlive = true
+        firstCard = Math.round(Math.random()*14)
+        secondCard = Math.round(Math.random() * 14)
+        cards.push(firstCard)
+        cards.push(secondCard)
+        sum = firstCard + secondCard
+        renderGame()
+    }
+    else{
+        console.log("the game is going on...")
+    }
 }
 
 function renderGame() {
-    cardsEl.textContent = "Cards: " + cards[0] + " " + cards[1]
     // Create a for loop that renders out all the cards instead of just two
+    let cardMsg = "Cards:"
+    for (i=0;i<cards.length;i++){
+        cardMsg += " " + cards[i]
+    }
+    cardsEl.textContent = cardMsg
     
     sumEl.textContent = "Sum: " + sum
     if (sum <= 20) {
@@ -23,9 +38,10 @@ function renderGame() {
     } else if (sum === 21) {
         message = "You've got Blackjack!"
         hasBlackJack = true
+        resetTheGame()
     } else {
         message = "You're out of the game!"
-        isAlive = false
+        resetTheGame()
     }
     messageEl.textContent = message
 }
@@ -38,4 +54,10 @@ function newCard() {
     cards.push(card)
     console.log(cards)
     renderGame()
+}
+
+function resetTheGame(){
+    isAlive = false
+    sum = 0
+    cards = []
 }
