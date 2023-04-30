@@ -8,7 +8,7 @@ let sumEl = document.getElementById("sum-el")
 let cardsEl = document.getElementById("cards-el")
 
 function getRandomCard() {
-    let randomNumer = Math.floor( Math.random()*13 ) + 1
+    let randomNumer = Math.floor(Math.random() * 13) + 1
     if (randomNumer > 10) {
         return 10
     } else if (randomNumer === 1) {
@@ -32,7 +32,7 @@ function renderGame() {
     for (let i = 0; i < cards.length; i++) {
         cardsEl.textContent += cards[i] + " "
     }
-    
+
     sumEl.textContent = "Sum: " + sum
     if (sum <= 20) {
         message = "Do you want to draw a new card?"
@@ -49,8 +49,10 @@ function renderGame() {
 
 function newCard() {
     // Only allow the player to get a new card if she IS alive and does NOT have Blackjack
-    let card = getRandomCard()
-    sum += card
-    cards.push(card)
-    renderGame()
+    if (isAlive && !hasBlackJack) {
+        let card = getRandomCard()
+        sum += card
+        cards.push(card)
+        renderGame()
+    }
 }
